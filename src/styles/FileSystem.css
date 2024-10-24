@@ -1,0 +1,12 @@
+.folder-container {
+    display: flex;
+    flex-direction: column;
+    padding: 8px 4px;
+}
+
+.folder-container div{
+    cursor: pointer;
+}
+.folder-container span:hover {
+    color: blue;
+}

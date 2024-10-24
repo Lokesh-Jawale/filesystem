@@ -1,0 +1,14 @@
+.breadcrumb {
+    color: black;
+    display: flex;
+    flex-direction: row;
+    align-self: flex-start;
+}
+.breadcrumb span {
+    cursor: pointer !important;;
+}
+
+.breadcrumb span:hover {
+    color: #61a6ff;
+}
+
