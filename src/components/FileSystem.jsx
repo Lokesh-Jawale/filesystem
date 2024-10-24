@@ -8,7 +8,7 @@ const FileSystem = ({ folders, openSelectedFolder }) => {
         <h1>Current Path folders</h1>
         <div className='folder-container'>
             {Object.keys(folders).map((folder, index) => (
-                <div key={index} onClick={() => openSelectedFolder(folder)}><FaFolder /> <span>{folder}</span></div>
+                <div key={index} onClick={() => openSelectedFolder(folder, true)}><FaFolder /> <span>{folder}</span></div>
             ))}
         </div>
     </>

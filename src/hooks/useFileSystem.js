@@ -11,6 +11,8 @@ function useFileSystem() {
   };
 
   const updateCurrentFolders = (path, tree) => {
+    console.log(path);
+    console.log(tree);
     let newFolders = tree;
     for (let folder of path) {
       if (!newFolders[folder]) break;
@@ -21,7 +23,6 @@ function useFileSystem() {
 
   const createNewFolder = () => {
     if (fileName.trim().length === 0) {
-      console.log('Creating new folder in current path is not allowed');
       alert('Invalid folder name or folder already exists');
       return;
     }
@@ -45,10 +46,11 @@ function useFileSystem() {
     setFileName('');
   };
 
-  const openSelectedFolder = (folder) => {
+  const openSelectedFolder = (folder, openNewFolder = false) => {
+    console.log(currentPath)
     let folderIndex = currentPath.lastIndexOf(folder);
     let newPath = currentPath;
-    if (folderIndex === -1) {
+    if (folderIndex === -1 || openNewFolder) {
       newPath = [...currentPath, folder];
     } else {
       newPath = currentPath.slice(0, folderIndex + 1);
